@@ -1,22 +1,22 @@
-# 🔥 John-The-Ripper
+# 🔥John-The-Ripper
 
-# Welcome
+# ⤵️Welcome
     John the Ripper is one of the most well known, well-loved and versatile hash cracking tools out there. It combines a fast cracking speed, with     an extraordinary range of compatible hash types. 
 
-# Setting up John the Ripper 
+# 🃏Setting up John the Ripper 
     sudo apt install john
     
-# Wordlists
+# ⚔️Wordlists
     https://github.com/danielmiessler/SecLists
     sudo gzip -d /usr/share/wordlists/rockyou.txt.gz.
 
-# Cracking Basic Hashes # John Basic Syntax
+# 🦀Cracking Basic Hashes # John Basic Syntax
     john [options] [path to file]
     john - Invokes the John the Ripper program
     [path to file] - The file containing the hash you're trying to crack, if it's in the same directory you won't need to name a path, just the file.
     Note: Crack Hash store in john.pot file
     
-# Automatic Cracking
+# 🦀Automatic Cracking
     john --wordlist=[path to wordlist] [path to file]
 
     --wordlist= - Specifies using wordlist mode, reading from the file that you supply in the following path...
@@ -27,7 +27,7 @@
 
     john --wordlist=/usr/share/wordlists/rockyou.txt hash_to_crack.txt
     
-# Format-Specific Cracking
+# 🧨Format-Specific Cracking
     john --format=[format] --wordlist=[path to wordlist] [path to file]
 
     --format= - This is the flag to tell John that you're giving it a hash of a specific format, and to use the following format to crack it
@@ -38,12 +38,12 @@
 
     john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash_to_crack.txt
     
- # Cracking Windows Authentication Hashes
+ # 🪟Cracking Windows Authentication Hashes
     This section is about cracking Windows hashes and NTHash / NTLM
     Example:
         john --format=nt --wordlist=rockyou.txt ntlm.txt
         
-  # Cracking Hashes from /etc/shadow
+  # #️⃣Cracking Hashes from /etc/shadow
       Unshadowing:
           unshadow [path to passwd] [path to shadow]
 
@@ -62,7 +62,7 @@
 
            john --wordlist=/usr/share/wordlists/rockyou.txt --format=sha512crypt unshadowed.txt
            
-# Using Single Crack Mode
+# #️⃣Using Single Crack Mode
       john --single --format=[format] [path to file]
 
       --single - This flag lets john know you want to use the single hash cracking mode.
@@ -79,11 +79,11 @@
   
         1efee03cdcb96d90ad48ccc7b8666033
 
-    To
+      To
 
         mike:1efee03cdcb96d90ad48ccc7b8666033
         
-# Cracking Password Protected Zip Files 
+# 🤐Cracking Password Protected Zip Files 
     Zip2John:
       zip2john [options] [zip file] > [output file]
     Example Usage:
@@ -92,7 +92,7 @@
     Cracking:
        john --wordlist=/usr/share/wordlists/rockyou.txt zip_hash.txt
       
-# Cracking Password Protected RAR Archives
+# 🤐Cracking Password Protected RAR Archives
     Rar2John:
       rar2john [rar file] > [output file]
     Example Usage
@@ -101,7 +101,7 @@
     Cracking: 
       john --wordlist=/usr/share/wordlists/rockyou.txt rar_hash.txt
 
-# Cracking SSH Keys with John 
+# 🔐Cracking SSH Keys with John 
     SSH2John:
       ssh2john [id_rsa private key file] > [output file]
     Example Usage
